@@ -31,9 +31,4 @@ class CustomChatRoomRepositoryImpl(
             .collectList()
             .awaitSingle()
     }
-
-    override suspend fun createChatRoom(document: ChatRoomDocument): ChatRoomDocument {
-        return reactiveMongoOperations.insert<ChatRoomDocument>(document)
-            .awaitSingle()
-    }
 }

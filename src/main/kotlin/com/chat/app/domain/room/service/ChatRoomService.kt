@@ -40,7 +40,7 @@ class ChatRoomService(
             members = listOf(ChatRoomMember(createUserId, LocalDateTime.now())),
             createdByUserId = createUserId
         )
-        return chatRoomRepository.createChatRoom(chatRoomDocument)
+        return chatRoomRepository.save(chatRoomDocument)
             .let(ChatRoomMapper::mapToDomain)
     }
 }
